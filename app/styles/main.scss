@@ -54,7 +54,7 @@ body {
     letter-spacing: 3.5px;
     line-height: 0px;
     vertical-align: middle;
-    border: 1px solid #39484D;
+    border: 2px solid #39484D;
     width: 60px;
     height: 60px;
     border-radius: 0%;
@@ -62,6 +62,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 18px;
+    padding-left: 2px;
 }
 
 section { 
@@ -105,7 +106,7 @@ section:last-of-type {
   }
 
   .big-number div {
-    border: solid $lightGrey;
+    border-color: $lightGrey;
   }
 }
 
