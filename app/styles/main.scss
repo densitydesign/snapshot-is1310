@@ -3,7 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url(https://fonts.googleapis.com/css?family=Merriweather:700,400,400italic,900|Roboto:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:700,400,400italic,300,300italic,900|Roboto:400,400italic,700);
 
 // fonts
 $serif: 'Merriweather', serif;
@@ -37,6 +37,33 @@ body {
   height: $navbarHeight;
 }
 
+.big-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.big-number div {
+    text-align: center;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-size: 36px;
+    font-style: normal;
+    letter-spacing: 3.5px;
+    line-height: 0px;
+    vertical-align: middle;
+    border: 1px solid #39484D;
+    width: 60px;
+    height: 60px;
+    border-radius: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
 section { 
   padding: 0 0 70px; 
 }
@@ -64,7 +91,7 @@ section:nth-child(2) {
   }
 
   .big-number div {
-    border: 2px solid $lightGrey;
+    border-color: $lightGrey;
   }
 }
 
@@ -78,7 +105,7 @@ section:last-of-type {
   }
 
   .big-number div {
-    border: 2px solid $lightGrey;
+    border: solid $lightGrey;
   }
 }
 
@@ -134,27 +161,7 @@ line-height: 24px;
 margin: 0px;
 }
 
-.big-number {
-  text-align: center;
-  font-family: $serif;
-  font-weight: 700;
-  font-size: 60px;
-  letter-spacing: 3.5px;
-  display: flex;
-  justify-content: center;
-  align-items:center;
 
-  div {
-    border: 2px solid $darkBlue;
-    width: 130px;
-    height: 130px;
-    border-radius: 100%;
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    margin-bottom: 18px;
-  }
-}
 
 #letters-map {
   border: 12px solid $lightGrey;
