@@ -64,12 +64,12 @@ body {
     margin-bottom: 18px;
 }
 
-section { 
-  padding: 0 0 70px; 
+section {
+  padding: 0 0 70px;
 }
 
 section:nth-child(even) {
-  background-color: $lightGrey;  
+  background-color: $lightGrey;
 }
 
 section:nth-child(1) {
@@ -83,7 +83,7 @@ section:nth-child(1) {
 }
 
 section:nth-child(2) {
-  background-color: $darkBlue;  
+  background-color: $darkBlue;
   color: $lightGrey;
 
   .h-row {
@@ -96,7 +96,7 @@ section:nth-child(2) {
 }
 
 section:last-of-type {
-  background-color: $orange;  
+  background-color: $orange;
   color: $lightGrey;
   text-align: center;
 
@@ -105,7 +105,7 @@ section:last-of-type {
   }
 
   .big-number div {
-    border: solid $lightGrey;
+    border-color: $lightGrey;
   }
 }
 
@@ -161,17 +161,41 @@ line-height: 24px;
 margin: 0px;
 }
 
-
-
 #letters-map {
   border: 12px solid $lightGrey;
   box-sizing: border-box;
   height: 600px;
+  width:100%;
   display: flex;
   justify-content: inherit;
   align-items: inherit;
   margin: 40px 0;
+
+  svg {
+    position: relative;
+  }
+  path {
+    fill: none;
+    stroke-width: 1px;
+    stroke: black;
+    stroke-opacity: 0.5;
+    /*shape-rendering:crispEdges;*/
+  }
+
+  circle {
+    fill: yellow;
+    opacity: 0.75;
+  }
+
+  .date{
+    position: absolute;
+    z-index: 1;
+    font-size: 16px;
+    padding: 8px 8px;
+  }
 }
+
+
 
 .network-stage > .row, .dendogram-stage > .row {
   display: flex;
