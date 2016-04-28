@@ -13,6 +13,8 @@ angular.module('rolApp')
 		restrict: 'C',
 		link: function(scope, elem, attrs){
 			
+      
+      
 			var width = parseInt(d3.select('#dendogram').style('width')),
 				height =($window.innerHeight/100)*75
 

@@ -11,7 +11,7 @@ angular.module('rolApp')
     return {
 		// template: '<div></div>',
 		restrict: 'C',
-		scope: true,
+		//scope: true,
 		link: function(scope, elem) {
 			scope.animateDendogram = function() {
 			$('.dend-stage').removeClass('focus')
@@ -22,7 +22,19 @@ angular.module('rolApp')
 			// var newSrc = elem.attr('urlimg')
 			// if (oldSrc != newSrc) {
 			// 	$('#dendogram').attr('src',elem.attr('urlimg'))
+
 			// }
+        console.log("from directive!", scope.dendrogramPeople);
+        scope.$watch("dendrogramPeople",function(newVal, oldVal){
+
+          if(newVal != oldVal) {
+            //TODO
+          }
+          
+        })
+
+
+
 			elem.addClass('focus');
 			};
 		}

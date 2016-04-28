@@ -24,7 +24,12 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        resolve: {
+          people : function (fileservice) {
+            return fileservice.getFile('data/dendogram-people.json')
+          },
+        }
       })
       .when('/about', {
         templateUrl: 'views/about.html',

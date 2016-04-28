@@ -8,8 +8,11 @@
  * Controller of the rolApp
  */
 angular.module('rolApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, people) {
 
+
+    $scope.dendrogramPeople = people;
+    console.log("dp!", $scope.dendrogramPeople);
 
     var start = new Date(1600, 0, 1);
     var end = new Date(1800, 5, 1);
