@@ -34,6 +34,8 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
+    "angular": "^1.5.5",
+    "angular-scroll-trigger": "^0.5.4",
     "grunt-contrib-compass": "^1.1.1"
   }
 }

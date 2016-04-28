@@ -26,7 +26,6 @@ $navbarHeight: 50px;
 }
 
 body {
-  font-family: $sans;
   font-family: $serif;
   font-weight: 400;
   color: $veryDarkBlue;
@@ -178,13 +177,15 @@ margin: 0px;
   path {
     fill: none;
     stroke-width: 1px;
-    stroke: black;
+    stroke: $veryDarkBlue;
     stroke-opacity: 0.5;
     /*shape-rendering:crispEdges;*/
   }
 
   circle {
-    fill: yellow;
+    stroke-width: 1px;
+    stroke: $yellow;
+    fill: none;
     opacity: 0.75;
   }
 
@@ -196,22 +197,62 @@ margin: 0px;
   }
 }
 
+.network-stage {
+}
 
+.net-stage, .dend-stage {
+  opacity: 0.5;
+  transition: all 0s;
+  // margin-top: 0;
+  // margin-bottom: 0px;
+}
 
-.network-stage > .row, .dendogram-stage > .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
+.net-stage.focus, .dend-stage.focus {
+  opacity: 1;
 }
 
 .net-img-container, .dend-img-container {
-  display: flex;
-  border: 1px solid $darkBlue;
+  // border: 1px solid $yellow;
 }
 
-.net-img-container>img {
+#network {
+  margin: auto;
+  border: 1px solid $darkBlue;
+  height: 75vh;
+  display: block;
+  margin-top:15vh;
+  margin-bottom:10vh;
+}
 
+#dendogram {
+  margin: auto;
+  border: 1px solid $darkBlue;
+  height: 75vh;
+  display: block;
+  margin-top:15vh;
+  margin-bottom:10vh;
+}
+
+// .net-stage:first-child {
+//   margin-top: 100px;
+// }
+
+.room.h50vh {
+  display: block;
+  height: 50vh;
+}
+
+.room.h37-5vh {
+  display: block;
+  height: 37.5vh;
+}
+
+.room.h500 {
+  display: block;
+  height: 500px;
+}
+
+.magic-margin {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -290,3 +331,22 @@ margin: 0px;
 //     border-bottom: 0;
 //   }
 // }
+
+
+// d3 dendogram
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}

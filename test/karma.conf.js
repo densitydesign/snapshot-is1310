@@ -31,8 +31,11 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/d3/d3.js',
       'bower_components/moment/moment.js',
-      'bower_components/mapbox.js/mapbox.js',
       'bower_components/leaflet/dist/leaflet-src.js',
+      'bower_components/mapbox.js/mapbox.js',
+      'bower_components/scroll-trigger/dist/scroll-trigger.js',
+      'bower_components/matchmedia/matchMedia.js',
+      'bower_components/ngSticky/lib/sticky.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

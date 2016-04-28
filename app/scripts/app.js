@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'scroll-trigger',
+    'sticky'
   ])
   .config(function ($routeProvider) {
     $routeProvider

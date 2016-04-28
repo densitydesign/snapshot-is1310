@@ -13,10 +13,11 @@ angular.module('rolApp')
 
     var start = new Date(1600, 0, 1);
     var end = new Date(1800, 5, 1);
-    var duration = 500;
+    var duration = 250;
 
     $scope.current = start;
 
+// iosonosempreio.3a808358
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZmVuaWNlbnRvIiwiYSI6ImNpbmhsenNqeDAwMmd3ZGx5MXVmcjNrdTAifQ.D1nRFjJRXUR7PMk5eDJzHQ';
     var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/fenicento/cinhm9jbi01jhcxnhhyxqivcl/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
@@ -175,16 +176,27 @@ angular.module('rolApp')
 
           var startPoint = pathStartPoint(path);
 
+          var travelDuration = 0;
+
           d3.select("#circle" + id)
-            .attr("transform", "translate(" + startPoint[0] + "," + startPoint[1] + ")")
+              .attr("transform", "translate(" + startPoint[0] + "," + startPoint[1] + ")")
+              .style("opacity", 0)
             .transition()
-            .duration(1000)
-            .attr("r", 5)
-            .style("opacity", 1)
+              .delay(function(d){
+
+                var recvd = moment(d.properties.received)
+                var sent = moment(d.properties.sent)
+                return ( (recvd.diff(sent,'days')/30)*duration );
+
+              })
+              .duration(0)
+              .attr("r", 40)
+              .style("opacity", 1)
 
 
           path.style("opacity", 1)
             .transition()
+            .ease("linear")
             .duration(function(d){
 
               var recvd = moment(d.properties.received)
@@ -200,12 +212,15 @@ angular.module('rolApp')
             .each("end", function (d) {
 
               d3.select(this)
-                .transition().duration(1000)
-                .style("opacity", 0.1);
+                .transition()
+                  .duration(1000)
+                  .style("opacity", 0.1);
 
-              d3.select("#circle" + d.properties.id).transition().duration(1000)
-                .style("opacity", 0)
-                .attr("r", 0);
+              d3.select("#circle" + d.properties.id)
+                .transition()
+                  .duration(750)
+                  .style("opacity", 0)
+                  .attr("r", 0);
             }); // infinite loop
         }
       } //end transition
@@ -214,7 +229,7 @@ angular.module('rolApp')
         var pt = d3.select(".path"+id)
         var l = pt.node().getTotalLength(); //total length of path
         var i = d3.interpolateString("0," + l, l + "," + l); // interpolation of stroke-dasharray style attr
-        console.log(l)
+        // console.log(l)
         return function (t) {
           //t is fraction of time 0-1 since transition began
           var mrkr = d3.select("#circle"+id);
@@ -240,6 +255,4 @@ angular.module('rolApp')
         this.stream.point(point.x, point.y);
       }//end projectPoint
     });
-
-
   });
