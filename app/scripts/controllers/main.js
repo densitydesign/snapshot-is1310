@@ -8,11 +8,48 @@
  * Controller of the rolApp
  */
 angular.module('rolApp')
-  .controller('MainCtrl', function ($scope, people) {
-
+  .controller('MainCtrl', function ($scope, people, peopleWG) {
 
     $scope.dendrogramPeople = people;
-    console.log("dp!", $scope.dendrogramPeople);
+    $scope.dendrogramPeopleWG = peopleWG;
+
+    // Add class for CSS to dendrogramPeople
+    $scope.dendrogramPeople.children.forEach(function(community){
+      community.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
+      if ("children" in community) {
+        community.children.forEach(function(person){
+          person.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
+        })
+      }
+    })
+
+    // Copy class for CSS to dendrogramPeopleWG from dendogramPeople
+    $scope.dendrogramPeopleWG.children.forEach(function(cluster){
+      cluster.children.forEach(function(person){
+        // console.log(person)
+        //person.cssClass
+        people.children.forEach(function(cluster2){
+          cluster2.children.forEach(function(person2){
+            if (person.name == person2.name) {
+              person.cssClass = person2.cssClass
+            }
+          })
+        })
+      })
+    })
+
+    // Add class for CSS to dendrogramPeople based on WG
+    $scope.dendrogramPeopleWG.children.forEach(function(wg){
+      wg.cssClass = wg.cssClass + ' ' + wg.name.toLowerCase().replace("/", "-").replace(" ", "");
+      if ("children" in wg) {
+        wg.children.forEach(function(person){
+          person.cssClass = person.cssClass + ' ' + wg.name.toLowerCase().replace("/", "-").replace(" ", "");
+        })
+      }
+    })
+
+
+
 
     var start = new Date(1600, 0, 1);
     var end = new Date(1800, 5, 1);

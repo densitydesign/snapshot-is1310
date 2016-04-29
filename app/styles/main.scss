@@ -15,6 +15,12 @@ $veryDarkBlue: #363633;
 $yellow: #f3bc4c;
 $orange: #F36949;
 
+$archivist-librarian: #fcb52c;
+$digitalhumanist-designer: #649800;
+$it-developer: #00a3a4;
+$scholar: #ff4a36;
+
+
 $navbarHeight: 50px;
 
 
@@ -97,7 +103,7 @@ section:nth-child(2) {
 
 section:last-of-type {
   background-color: $orange;
-  color: $lightGrey;
+  color: white;
   text-align: center;
 
   .h-row {
@@ -217,7 +223,7 @@ margin: 0px;
 
 #network {
   margin: auto;
-  border: 1px solid $darkBlue;
+  // border: 1px solid $darkBlue;
   height: 75vh;
   display: block;
   margin-top:15vh;
@@ -226,7 +232,7 @@ margin: 0px;
 
 #dendogram {
   margin: auto;
-  border: 1px solid $darkBlue;
+  // border: 1px solid $darkBlue;
   height: 75vh;
   display: block;
   margin-top:15vh;
@@ -240,6 +246,11 @@ margin: 0px;
 .room.h50vh {
   display: block;
   height: 50vh;
+}
+
+.room.h25vh {
+  display: block;
+  height: 25vh;
 }
 
 .room.h37-5vh {
@@ -336,17 +347,54 @@ margin: 0px;
 // d3 dendogram
 
 .node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+  fill: #eee;
+  fill-opacity: 0.5;
+  stroke: #999;
+  stroke-width: 1px;
 }
 
 .node {
-  font: 10px sans-serif;
+  font: 8px $sans;
+  fill: #999;
+}
+
+.node:hover {
+  font-size: 12px;
+  fill: $veryDarkBlue;
+}
+
+.node.it-developer circle {
+  fill: $it-developer;
+  stroke: $it-developer;
+}
+
+.node.digitalhumanist-designer circle {
+  fill: $digitalhumanist-designer;
+  stroke: $digitalhumanist-designer;
+}
+
+.node.archivist-librarian circle {
+  fill: $archivist-librarian;
+  stroke: $archivist-librarian;
+}
+
+.node.scholar circle {
+  fill: $scholar;
+  stroke: $scholar;
 }
 
 .link {
   fill: none;
   stroke: #ccc;
-  stroke-width: 1.5px;
+  stroke-width: 1px;
 }
+
+.out {
+  opacity: 0.5;
+}
+
+.wg1.focus {
+  opacity: 1;
+}
+
+

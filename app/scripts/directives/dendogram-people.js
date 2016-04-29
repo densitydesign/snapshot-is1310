@@ -11,29 +11,45 @@ angular.module('rolApp')
     return {
 		template: '<svg id="dendogram" width="100%" height='+($window.innerHeight/100)*75+'></svg>',
 		restrict: 'C',
-		link: function(scope, elem, attrs){
+		link: function(scope, elem, attrs){  		
+
 			
-      
-      
-			var width = parseInt(d3.select('#dendogram').style('width')),
-				height =($window.innerHeight/100)*75
 
-			var radius = height / 2;
+			scope.drawDendrogram = function(root) {
 
-			var cluster = d3.layout.cluster()
-			    .size([360, radius - 120]);
+				d3.select("#dendogram").selectAll("*").remove();
 
-			var diagonal = d3.svg.diagonal.radial()
-			    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+				var width = parseInt(d3.select('#dendogram').style('width')),
+					height =($window.innerHeight/100)*75
 
-			var svg = d3.select("#dendogram")
-			    .attr("width", radius * 2)
-			    .attr("height", radius * 2)
-			  .append("g")
-			    .attr("transform", "translate(" + radius + "," + radius + ")");
+				var radius = height / 2;
 
-			d3.json("/data/dendogram-people.json", function(error, root) {
-			  if (error) throw error;
+				var cluster = d3.layout.cluster()
+				    .size([360, radius - 120]);
+
+				var diagonal = d3.svg.diagonal.radial()
+				    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+				var svg = d3.select("#dendogram")
+				    .attr("width", radius * 2)
+				    .attr("height", radius * 2)
+				  .append("g")
+				    .attr("transform", "translate(" + radius + "," + radius + ")");
+
+			  // root.children.forEach(function(community){
+			  	
+			  // 	community.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
+			  	
+			  // 	if ("children" in community) {
+			  // 		community.children.forEach(function(person){
+				 //  		person.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
+				 //  	})
+			  // 	}
+
+			  	
+			  // })
+
+			  // console.log(root)
 
 			  var nodes = cluster.nodes(root);
 
@@ -46,8 +62,12 @@ angular.module('rolApp')
 			  var node = svg.selectAll("g.node")
 			      .data(nodes)
 			    .enter().append("g")
-			      .attr("class", "node")
-			      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+			      .attr("class", function(d){
+			      	return "node " + d.cssClass;
+			      })
+			      .attr("transform", function(d) { 
+			      	return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+			      })
 
 			  node.append("circle")
 			      .attr("r", 4.5);
@@ -57,9 +77,17 @@ angular.module('rolApp')
 			      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
 			      .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
 			      .text(function(d) { return d.name; });
-			});
+
 
 			d3.select(self.frameElement).style("height", radius * 2 + "px");
+
+			}
+
+			//scope.drawDendrogram(scope.dendrogramPeople)
+
+			
+
+			
 			
     	}
     };

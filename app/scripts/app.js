@@ -29,6 +29,9 @@ angular
           people : function (fileservice) {
             return fileservice.getFile('data/dendogram-people.json')
           },
+          peopleWG : function (fileservice) {
+            return fileservice.getFile('data/dendogram-peopleWG.json')
+          },
         }
       })
       .when('/about', {
