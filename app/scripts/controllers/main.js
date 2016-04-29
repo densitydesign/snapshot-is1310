@@ -57,8 +57,6 @@ angular.module('rolApp')
 
     $scope.current = start;
 
-// iosonosempreio.3a808358
-
     L.mapbox.accessToken = 'pk.eyJ1IjoiZmVuaWNlbnRvIiwiYSI6ImNpbmhsenNqeDAwMmd3ZGx5MXVmcjNrdTAifQ.D1nRFjJRXUR7PMk5eDJzHQ';
     var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/fenicento/cinhm9jbi01jhcxnhhyxqivcl/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
       attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'

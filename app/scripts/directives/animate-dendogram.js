@@ -19,7 +19,7 @@ angular.module('rolApp')
 			scope.animateDendogram = function(id) {
 				$('.dend-stage').removeClass('focus');
 				// console.log( elem.attr('stage') )
-				d3.select('.magic-margin').style('margin-left', (parseInt(d3.select('.dend-stage').style('width'))+30)+'px' )
+				// d3.select('.magic-margin').style('margin-left', (parseInt(d3.select('.dend-stage').style('width'))+30)+'px' )
 
 				// console.log( elem.attr('stage') )
 

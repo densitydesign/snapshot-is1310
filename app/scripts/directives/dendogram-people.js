@@ -83,7 +83,13 @@ angular.module('rolApp')
 
 			}
 
-			//scope.drawDendrogram(scope.dendrogramPeople)
+			scope.drawDendrogram(function(){
+				var deep = _.cloneDeep(scope.dendrogramPeople);
+				deep.children.forEach(function(cluster){
+					delete cluster.children;
+				})
+				return deep;
+			})
 
 			
 
