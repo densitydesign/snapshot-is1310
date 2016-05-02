@@ -5,4 +5,5 @@
 /bower_components
 .idea
 .DS_Store
-data/confidential
+data/confidential/
+app/.DS_Store
