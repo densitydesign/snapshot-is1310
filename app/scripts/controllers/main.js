@@ -51,8 +51,8 @@ angular.module('rolApp')
 
 
 
-    var start = new Date(1600, 0, 1);
-    var end = new Date(1800, 5, 1);
+    var start = new Date(1620, 0, 1);
+    var end = new Date(1662, 0, 25);
     var duration = 250;
 
     $scope.current = start;
@@ -95,7 +95,7 @@ angular.module('rolApp')
 
     var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-    d3.json("data/newroutes.json", function (collection) {
+    d3.json("data/confidential/hartlib_complete.json", function (collection) {
       var transform = d3.geo.transform({
         point: projectPoint
       });
@@ -229,7 +229,8 @@ angular.module('rolApp')
               })
               .duration(0)
               .attr("r", 40)
-              .style("opacity", 1)
+              .attr("fill-opacity", 0)
+              .style("opacity", 0)
 
 
           path.style("opacity", 1)
@@ -252,13 +253,15 @@ angular.module('rolApp')
               d3.select(this)
                 .transition()
                   .duration(1000)
-                  .style("opacity", 0.1);
+                  .style("opacity", 0.2);
 
               d3.select("#circle" + d.properties.id)
                 .transition()
                   .duration(750)
-                  .style("opacity", 0)
-                  .attr("r", 0);
+                  .style("opacity", 0.2)
+                  // .attr("fill-opacity", 0.2)
+                  .attr("stroke-width", 2)
+                  .attr("r", 3)
             }); // infinite loop
         }
       } //end transition

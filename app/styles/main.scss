@@ -164,7 +164,7 @@ a {
 }
 
 p {
-  margin: 20px 0;
+  margin: 24px 0;
   line-height: 24px;
 }
 
@@ -174,6 +174,19 @@ font-size: 16px;
 letter-spacing: 0px;
 line-height: 24px;
 margin: 0px;
+}
+
+p.caption {
+font-family: $sans;
+font-size: 12px;
+letter-spacing: 0px;
+line-height: 20px;
+margin: 0px;
+margin-bottom: 32px;
+}
+
+.highlight {
+  color: $orange;
 }
 
 #letters-map {
@@ -198,10 +211,17 @@ margin: 0px;
   }
 
   circle {
-    stroke-width: 1px;
+    stroke-width: 2px;
     stroke: $yellow;
-    fill: none;
+    fill-opacity: 0;
     opacity: 0.75;
+  }
+
+  circle.arrived {
+    fill: $orange;
+    fill-opacity:1;
+    stroke-width: 0px;
+    opacity: 0.2;
   }
 
   .date{
@@ -251,6 +271,10 @@ margin: 0px;
   display: block;
   margin-top:15vh;
   margin-bottom:10vh;
+}
+
+#dendogram {
+  transition: all 0.5s;
 }
 
 // .net-stage:first-child {
@@ -411,4 +435,8 @@ margin: 0px;
   opacity: 1;
 }
 
-
+#events-map {
+  width: 100%;
+  height: 60vh;
+  min-height: 300px;
+}
