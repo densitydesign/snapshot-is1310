@@ -14,7 +14,7 @@ angular.module('rolApp')
       link: function postLink(scope, element, attrs) {
         // console.log(element)
         
-        var margin = {top: 30, right: 20, bottom: 30, left: 60},
+        var margin = {top: 40, right: 20, bottom: 35, left: 60},
         	border = parseInt( d3.select(element[0]).style('border-width')),
 		    width = parseInt( d3.select(element[0]).style('width') ) - margin.left - margin.right - border*2,
 		    height = parseInt( d3.select(element[0]).style('height') ) - margin.top - margin.bottom - border*2;
@@ -57,17 +57,26 @@ angular.module('rolApp')
 		  svg.append("g")
 		      .attr("class", "x axis")
 		      .attr("transform", "translate(0," + height + ")")
-		      .call(xAxis);
+		      .call(xAxis)
+		    .append("text")
+		      .attr("transform", "rotate(0)")
+		      .attr("y", 10)
+		      .attr("x", width-margin.right +10)
+		      .attr("dy", ".71em")
+		      .style("text-anchor", "end")
+		      .text("Years")
+		      .attr("class","special");
 
 		  svg.append("g")
 		      .attr("class", "y axis")
 		      .call(yAxis)
 		    .append("text")
 		      .attr("transform", "rotate(0)")
-		      .attr("y", -16)
+		      .attr("y", -20)
 		      .attr("dy", ".71em")
 		      .style("text-anchor", "end")
-		      .text("Count");
+		      .text("Count")
+		      .attr("class","special");
 
 		  svg.append("path")
 		      .datum(data)

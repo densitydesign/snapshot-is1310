@@ -49,6 +49,9 @@ angular.module('rolApp')
     })
 
 
+    
+
+
     // //Map of letters starts here
     // var start = new Date(1524, 0, 1);
     // var end = new Date(1971, 0, 1);
