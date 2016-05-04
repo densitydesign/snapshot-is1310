@@ -12,6 +12,7 @@ $sans: 'Roboto', sans-serif;
 $darkBlue: #39484D;
 $lightGrey: #f2f5f7;
 $veryDarkBlue: #363633;
+$darkGrey: #4d4d4d;
 $yellow: #f3bc4c;
 $orange: #F36949;
 
@@ -78,8 +79,9 @@ body {
 }
 
 section {
-  padding: 0 0 70px;
+  padding: 0 0 80px;
 }
+
 
 section:nth-child(even) {
   background-color: $lightGrey;
@@ -95,9 +97,20 @@ section:nth-child(1) {
   width: 100%;
   box-sizing: border-box;
   padding-top: $navbarHeight;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-section:nth-child(2) {
+#section1,#section4 {
   background-color: $darkBlue;
   color: $lightGrey;
 
@@ -108,6 +121,10 @@ section:nth-child(2) {
   .big-number div {
     border-color: $lightGrey;
   }
+}
+
+#section4 {
+
 }
 
 section:last-of-type {
@@ -189,6 +206,11 @@ margin-bottom: 32px;
   color: $orange;
 }
 
+.vertical-centered {
+  display: flex;
+  align-items: center;
+}
+
 #letters-map {
   border: 12px solid $lightGrey;
   box-sizing: border-box;
@@ -240,6 +262,12 @@ margin-bottom: 32px;
 .network-stage {
 }
 
+.dendogram-stage, .dendogram-wg-stage {
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .net-stage, .dend-stage {
   opacity: 0.5;
   transition: all 0s;
@@ -247,12 +275,35 @@ margin-bottom: 32px;
   // margin-bottom: 0px;
 }
 
+.dend-stage, .dend-two-stage {
+  border: 1px solid black;
+}
+
+.dend-stage {
+  margin-top: 50vh;
+}
+
+.dend-stage:last-of-type, .dend-two-stage:last-of-type {
+  margin: 50vh auto;
+}
+
 .net-stage.focus, .dend-stage.focus {
   opacity: 1;
 }
 
-.net-img-container, .dend-img-container {
-  // border: 1px solid $yellow;
+.net-img-container>img {
+  border: 12px solid $darkBlue;
+  margin:auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-height: 70vh;
+  max-width: 70vh;
+}
+
+.chart-container {
+  // background-color: rgba(180,47, 20,0.2);
+  flex: 1;
+  display: block;
 }
 
 #network {
@@ -264,26 +315,24 @@ margin-bottom: 32px;
   margin-bottom:10vh;
 }
 
-#dendogram {
-  margin: auto;
-  // border: 1px solid $darkBlue;
-  height: 75vh;
-  display: block;
-  margin-top:15vh;
-  margin-bottom:10vh;
-}
-
-#dendogram {
+#dendogram, #dendogram2 {
+  border: none;
+  margin:auto;
+  // margin-top: 24px;
+  // margin-bottom: 24px;
+  // max-height: 70vh;
+  // max-width: 70vh;
+  width: 90vh;
+  height: 90vh;
+  width: 100%;
+  height: 100%;
+  max-height: 90vh;
   transition: all 0.5s;
 }
 
-// .net-stage:first-child {
-//   margin-top: 100px;
-// }
-
 .room.h50vh {
   display: block;
-  height: 50vh;
+  height: 60vh;
 }
 
 .room.h25vh {
@@ -439,4 +488,8 @@ margin-bottom: 32px;
   width: 100%;
   height: 60vh;
   min-height: 300px;
+  border: 12px solid $darkBlue;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }

@@ -2,25 +2,25 @@
 
 /**
  * @ngdoc directive
- * @name rolApp.directive:dendogramPeople
+ * @name rolApp.directive:dendogramWGPeople
  * @description
- * # dendogramPeople
+ * # dendogramWGPeople
  */
 angular.module('rolApp')
-  .directive('communitiesDendogram', function ($window) {
+  .directive('communitiesWgDendogram', function ($window) {
     return {
-		template: '<svg id="dendogram"></svg>',
+		template: '<svg id="dendogram2"></svg>',
 		restrict: 'AEC',
 		link: function(scope, elem, attrs){  		
 
 			
 
-			scope.drawDendrogram = function(root) {
+			scope.drawDendrogramWg = function(root) {
 
-				d3.select("#dendogram").selectAll("*").remove();
+				d3.select("#dendogram2").selectAll("*").remove();
 
-				var width = parseInt(d3.select('#dendogram').style('width')),
-					height = parseInt(d3.select('#dendogram').style('height')),
+				var width = parseInt(d3.select('#dendogram2').style('width')),
+					height = parseInt(d3.select('#dendogram2').style('height')),
 					radius = height / 2,
 					posX = radius
 
@@ -34,26 +34,11 @@ angular.module('rolApp')
 				var diagonal = d3.svg.diagonal.radial()
 				    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-				var svg = d3.select("#dendogram")
+				var svg = d3.select("#dendogram2")
 				    .attr("width", radius * 2)
 				    .attr("height", radius * 2)
 				  .append("g")
 				    .attr("transform", "translate(" + posX + "," + radius + ")");
-
-			  // root.children.forEach(function(community){
-			  	
-			  // 	community.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
-			  	
-			  // 	if ("children" in community) {
-			  // 		community.children.forEach(function(person){
-				 //  		person.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
-				 //  	})
-			  // 	}
-
-			  	
-			  // })
-
-			  // console.log(root)
 
 			  var nodes = cluster.nodes(root);
 
@@ -73,8 +58,6 @@ angular.module('rolApp')
 			      	return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
 			      })
 
-
-
 			  node.append("circle")
 			      .attr("r", 4);
 
@@ -89,8 +72,8 @@ angular.module('rolApp')
 
 			}
 
-			scope.drawDendrogram(function(){
-				var deep = _.cloneDeep(scope.dendrogramPeople);
+			scope.drawDendrogramWg(function(){
+				var deep = _.cloneDeep(scope.dendrogramPeopleWG);
 				deep.children.forEach(function(cluster){
 					delete cluster.children;
 				})

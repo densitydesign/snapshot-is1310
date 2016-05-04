@@ -19,7 +19,8 @@ angular
     'scroll-trigger',
     'sticky'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, ScrollTriggerProvider) {
+    ScrollTriggerProvider.interval(350);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
