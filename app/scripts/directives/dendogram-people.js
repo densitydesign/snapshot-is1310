@@ -13,11 +13,12 @@ angular.module('rolApp')
 		restrict: 'AEC',
 		link: function(scope, elem, attrs){  		
 
-			
-
-			scope.drawDendrogram = function(root) {
-
+			scope.drawDendrogram = function(root,opacity) {
 				d3.select("#dendogram").selectAll("*").remove();
+				d3.select("#dendogram")
+					.style("border","0px solid red")
+					.style("opacity",opacity)
+
 
 				var width = parseInt(d3.select('#dendogram').style('width')),
 					height = parseInt(d3.select('#dendogram').style('height')),
@@ -30,30 +31,13 @@ angular.module('rolApp')
 
 				var cluster = d3.layout.cluster()
 				    .size([360, radius - 120]);
-
 				var diagonal = d3.svg.diagonal.radial()
 				    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
-
 				var svg = d3.select("#dendogram")
 				    .attr("width", radius * 2)
 				    .attr("height", radius * 2)
 				  .append("g")
 				    .attr("transform", "translate(" + posX + "," + radius + ")");
-
-			  // root.children.forEach(function(community){
-			  	
-			  // 	community.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
-			  	
-			  // 	if ("children" in community) {
-			  // 		community.children.forEach(function(person){
-				 //  		person.cssClass = community.name.toLowerCase().replace("/", "-").replace(" ", "");
-				 //  	})
-			  // 	}
-
-			  	
-			  // })
-
-			  // console.log(root)
 
 			  var nodes = cluster.nodes(root);
 
@@ -73,17 +57,28 @@ angular.module('rolApp')
 			      	return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
 			      })
 
-
-
 			  node.append("circle")
-			      .attr("r", 4);
+			      .attr("r", function(){
+			      	if ( window.innerWidth >= 768 && window.innerWidth < 992 ) {
+			      		// console.log("2")
+			      		return 2;
+			      	} else if ( window.innerWidth >= 992 && window.innerWidth < 1200 ) {
+			      		// console.log("3")
+			      		return 3;
+			      	} else {
+			      		// console.log("4")
+			      		return 4;
+			      	}
+			      	
+			      });
 
 			  node.append("text")
 			      .attr("dy", ".31em")
 			      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
 			      .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-			      .text(function(d) { return d.name; });
-
+			      .text(function(d) { 
+			      	return d.name;
+			      });
 
 			d3.select(self.frameElement).style("height", radius * 2 + "px");
 
@@ -94,12 +89,9 @@ angular.module('rolApp')
 				deep.children.forEach(function(cluster){
 					delete cluster.children;
 				})
+
 				return deep;
-			})
-
-			
-
-			
+			},0)
 			
     	}
     };

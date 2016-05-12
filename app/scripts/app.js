@@ -17,10 +17,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'scroll-trigger',
-    'sticky'
+    'sticky',
+    'duScroll'
   ])
   .config(function ($routeProvider, ScrollTriggerProvider) {
-    ScrollTriggerProvider.interval(350);
+    // ScrollTriggerProvider.interval(350);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

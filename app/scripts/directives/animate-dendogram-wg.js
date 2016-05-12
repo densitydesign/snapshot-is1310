@@ -36,7 +36,7 @@ angular.module('rolApp')
 
 				if (id == 'ds4') {
 					if (state.wg1 == false ){
-						scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+						scope.drawDendrogramWg(scope.dendrogramPeopleWG,1)
 						$("#dendogram2>g").find("*").addClass('out')
 						$("#dendogram2>g").find(".wg1").removeClass('out')
 						$("#dendogram2>g").find(".wg1 *").removeClass('out')
@@ -48,12 +48,12 @@ angular.module('rolApp')
 						state.wg5 = false
 						state.wg6 = false
 						state.noWg = false						
-						console.log("chiamato 1")
+						// console.log("chiamato 1")
 					}
 					
 				} else if (id == 'ds5') {
 					if (state.wg2 == false){
-						scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+						// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 						$("#dendogram2>g").find("*").addClass('out')
 						$("#dendogram2>g").find(".wg2").removeClass('out')
 						$("#dendogram2>g").find(".wg2 *").removeClass('out')
@@ -65,40 +65,45 @@ angular.module('rolApp')
 						state.wg5 = false
 						state.wg6 = false
 						state.noWg = false
-						console.log("chiamato 2")
+						// console.log("chiamato 2")
 					}
 				} else if (id == 'ds6') {
-					scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+					// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 					$("#dendogram2>g").find("*").addClass('out')
 					$("#dendogram2>g").find(".wg3").removeClass('out')
 					$("#dendogram2>g").find(".wg3 *").removeClass('out')
 					$("#dendogram2").css("transform", "rotate(-25deg)")
+					// console.log("chiamato 3")
 				} else if (id == 'ds7') {
-					scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+					// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 					$("#dendogram2>g").find("*").addClass('out')
 					$("#dendogram2>g").find(".wg4").removeClass('out')
 					$("#dendogram2>g").find(".wg4 *").removeClass('out')
 					$("#dendogram2").css("transform", "rotate(15deg)")
+					// console.log("chiamato 4")
 				} else if (id == 'ds8') {
-					scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+					// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 					$("#dendogram2>g").find("*").addClass('out')
 					$("#dendogram2>g").find(".wg5").removeClass('out')
 					$("#dendogram2>g").find(".wg5 *").removeClass('out')
 					$("#dendogram2").css("transform", "rotate(51deg)")
+					// console.log("chiamato 5")
 				} else if (id == 'ds9') {
-					scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+					// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 					$("#dendogram2>g").find("*").addClass('out')
 					$("#dendogram2>g").find(".wg6").removeClass('out')
 					$("#dendogram2>g").find(".wg6 *").removeClass('out')
 					$("#dendogram2").css("transform", "rotate(77deg)")
+					// console.log("chiamato 6")
 				} else if (id == 'ds10') {
-					scope.drawDendrogramWg(scope.dendrogramPeopleWG)
+					// scope.drawDendrogramWg(scope.dendrogramPeopleWG)
 					$("#dendogram2>g").find("*").addClass('out')
 					$("#dendogram2>g").find(".affiliates").removeClass('out')
 					$("#dendogram2>g").find(".affiliates *").removeClass('out')
 					$("#dendogram2>g").find(".nowg").removeClass('out')
 					$("#dendogram2>g").find(".nowg *").removeClass('out')
-					$("#dendogram2").css("transform", "rotate(0deg)") // 153
+					$("#dendogram2").css("transform", "rotate(178deg)")
+					// console.log("chiamato last")
 				}
 
 				$("#"+id).addClass('focus');

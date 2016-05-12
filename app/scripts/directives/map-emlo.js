@@ -9,10 +9,10 @@
 angular.module('rolApp')
   .directive('mapEmlo', function () {
     return {
-      template: '',
+      templateUrl: 'views/map-emlo.template.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the mapEmlo directive');
+        // element.text('this is the mapEmlo directive');
 
         // //Map of letters starts here
 	    // var start = new Date(1524, 0, 1);
@@ -37,7 +37,7 @@ angular.module('rolApp')
 	    var map = L.map(element[0], {zoomControl: false})
 	      .addLayer(mapboxTiles)
 
-	      .setView([48.743611, 18.930556], 4);
+	      .setView([50.043611, 3.730556], 5);
 
 	    // Disable drag and zoom handlers.
 	    // map.dragging.disable();

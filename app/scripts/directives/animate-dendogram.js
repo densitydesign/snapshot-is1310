@@ -20,13 +20,13 @@ angular.module('rolApp')
 				$('.dend-stage').removeClass('focus');
 
 				if (id == 'ds1') {
-					var deep = _.cloneDeep(scope.dendrogramPeople);
+					var deep = _.cloneDeep(scope.dendrogramPeople,1);
 					deep.children.forEach(function(cluster){
 						delete cluster.children;
 					})
 					scope.drawDendrogram(deep)
 				} else if (id == 'ds2') {
-					scope.drawDendrogram(scope.dendrogramPeople)
+					scope.drawDendrogram(scope.dendrogramPeople,1)
 					$("#dendogram").css("transform", "rotate(0deg)")
 				}
 

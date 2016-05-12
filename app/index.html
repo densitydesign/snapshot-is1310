@@ -34,21 +34,22 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">
+            <!-- <a class="navbar-brand" href="#/" du-smooth-scroll>
               <img class="img-responsive" alt="Brand" src="images/brand.png" />
-            </a>
+            </a> -->
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
               
-              <li><a href="#/#section1">1. Objectives</a></li>
-              <li><a href="#/#section2">2. Extent</a></li>
-              <li><a href="#/#section3">3. Disciplinarity</a></li>
-              <li><a href="#/#section4">4. Worked Example</a></li>
-              <li><a href="#/#section5">5. Activities</a></li>
-              <li><a href="#/#section5">6. More</a></li>
+              <li><a class="hidden-md hidden-lg" href="#/#section0" du-smooth-scroll>R:</a><a class="hidden-xs hidden-sm" href="#/#section0" du-smooth-scroll>Report:</a></li>
+              <li du-scrollspy="section1"><a href="#/#section1" du-smooth-scroll>1. Objectives</a></li>
+              <li du-scrollspy="section2"><a href="#/#section2" du-smooth-scroll>2. Extent</a></li>
+              <li du-scrollspy="section3"><a href="#/#section3" du-smooth-scroll>3. Disciplinarity</a></li>
+              <li du-scrollspy="section4"><a href="#/#section4" du-smooth-scroll>4. Worked Example</a></li>
+              <li du-scrollspy="section5"><a href="#/#section5" du-smooth-scroll>5. Activities</a></li>
+              <li du-scrollspy="section6"><a href="#/#section6" du-smooth-scroll>6. More</a></li>
 
             </ul>
           </div>
@@ -108,6 +109,7 @@
     <script src="bower_components/matchmedia/matchMedia.js"></script>
     <script src="bower_components/ngSticky/lib/sticky.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -123,6 +125,7 @@
         <script src="scripts/directives/animate-dendogram-wg.js"></script>
         <script src="scripts/directives/linechart-letter-distribution.js"></script>
         <script src="scripts/directives/map-emlo.js"></script>
+        <script src="scripts/directives/legend-communities.js"></script>
         <!-- endbuild -->
 </body>
 </html>

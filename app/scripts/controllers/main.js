@@ -8,6 +8,8 @@
  * Controller of the rolApp
  */
 angular.module('rolApp')
+  .value('duScrollDuration', 1500)
+  .value('duScrollOffset', 50)
   .controller('MainCtrl', function ($scope, people, peopleWG) {
 
     $scope.dendrogramPeople = people;
@@ -26,8 +28,6 @@ angular.module('rolApp')
     // Copy class for CSS to dendrogramPeopleWG from dendogramPeople
     $scope.dendrogramPeopleWG.children.forEach(function(cluster){
       cluster.children.forEach(function(person){
-        // console.log(person)
-        //person.cssClass
         people.children.forEach(function(cluster2){
           cluster2.children.forEach(function(person2){
             if (person.name == person2.name) {
@@ -48,6 +48,32 @@ angular.module('rolApp')
       }
     })
 
+    $scope.namesShortner = function(oggetto) {
+        if (oggetto.children) {
+            oggetto.children.forEach(function(d){
+                if (d.children) {
+                    d.children.forEach(function(e){
+                        if (e.name && e.name!="WG 1" && e.name!="WG 2" && e.name!="WG 3" && e.name!="WG 4" && e.name!="WG 5" && e.name!="WG 6" && e.name!="Affiliates" && e.name!="No WG") {
+                            e.name = e.name.substring(0, e.name.indexOf(' ')+2).replace('#', ' ')+'.'
+                        }
+
+                    })
+                }
+            })
+        }
+    }
+
+    $scope.namesShortner($scope.dendrogramPeopleWG);
+    $scope.namesShortner($scope.dendrogramPeople);
+
+    $scope.offset = 60;
+
+    $scope.centerStyckyElm = function(stickyElement){
+        var thisHeight = parseInt($(stickyElement).css("height"));
+        var offset = (window.innerHeight - thisHeight)/2;
+        console.log(thisHeight, offset);
+        $scope.offset = offset;
+    }
 
     
 

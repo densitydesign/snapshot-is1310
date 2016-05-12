@@ -12,6 +12,7 @@ $sans: 'Roboto', sans-serif;
 $darkBlue: #39484D;
 $lightGrey: #f2f5f7;
 $veryDarkBlue: #363633;
+$grey: #d9dbdd;
 $darkGrey: #4d4d4d;
 $yellow: #f3bc4c;
 $orange: #F36949;
@@ -50,6 +51,16 @@ body {
   height: 100%;
 }
 
+.navbar-default .navbar-nav > li > a {
+  transition: color 0.4s;
+  color: $darkBlue;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: $orange;
+}
+
 .big-number {
   display: flex;
   justify-content: center;
@@ -83,7 +94,7 @@ section {
 }
 
 
-section:nth-child(even) {
+section:nth-child(odd) {
   background-color: $lightGrey;
 }
 
@@ -97,8 +108,6 @@ section:nth-child(1) {
   width: 100%;
   box-sizing: border-box;
   padding-top: $navbarHeight;
-
-  background-image: url('../../images/cover_BG.png');
   background-size: 1440px auto;
     background-repeat: no-repeat;
     background-position: center center;
@@ -119,12 +128,11 @@ section:nth-child(1) {
     width: 100vw;
     display: block;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
-    background-image: url('../../images/cover_L1.png');
-    background-size: 740px auto;
+    background-size: 80% auto;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 18%;
   }
 
   .level2 {
@@ -134,18 +142,17 @@ section:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('../../images/cover_L2.png');
-    background-size: 1200px auto;
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center 95%;
   }
 
   .level3.hand-left {
-    height: 500px;
-    width: 500px;
+    height: 30%;
+    width: 30%;
     display: block;
-    background-image: url('../../images/cover_L3a.png');
-    background-size: 500px 500px;
+    
+    background-size: 100% 100%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -153,11 +160,11 @@ section:nth-child(1) {
   }
 
   .level3.hand-right {
-    height: 500px;
-    width: 500px;
+    height: 30%;
+    width: 30%;
     display: block;
-    background-image: url('../../images/cover_L3b.png');
-    background-size: 500px 500px;
+    
+    background-size: 100% 100%;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -242,9 +249,9 @@ p {
 
 p.description {
 font-family: $sans;
-font-size: 16px;
+font-size: 12px;
 letter-spacing: 0px;
-line-height: 24px;
+line-height: 19px;
 margin: 0px;
 }
 
@@ -359,7 +366,7 @@ margin-bottom: 32px;
   margin-top: 24px;
   margin-bottom: 24px;
   max-height: 70vh;
-  max-width: 70vh;
+  max-width: 100%;
 }
 
 .chart-container {
@@ -423,20 +430,6 @@ margin-bottom: 32px;
   padding-right: 15px;
 }
 
-/* Custom page header */
-// .header {
-//   border-bottom: 1px solid #e5e5e5;
-//   margin-bottom: 10px;
-
-//   Make the masthead heading the same height as the navigation
-//   h3 {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     line-height: 40px;
-//     padding-bottom: 19px;
-//   }
-// }
-
 /* Custom page footer */
 .footer {
   padding: 30px 0 60px;
@@ -445,71 +438,23 @@ margin-bottom: 32px;
   border-top: 1px solid $lightGrey;
 }
 
-// .container-narrow > hr {
-//   margin: 30px 0;
-// }
-
-/* Main marketing message and sign up button */
-// .jumbotron {
-//   text-align: center;
-//   border-bottom: 1px solid #e5e5e5;
-
-//   .btn {
-//     font-size: 21px;
-//     padding: 14px 24px;
-//   }
-// }
-
-/* Supporting marketing content */
-// .marketing {
-//   margin: 40px 0;
-
-//   p + h4 {
-//     margin-top: 28px;
-//   }
-// }
-
-// /* Responsive: Portrait tablets and up */
-// @media screen and (min-width: 768px) {
-//   .container {
-//     max-width: 730px;
-//   }
-
-//   /* Remove the padding we set earlier */
-//   .header,
-//   .marketing,
-//   .footer {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-//   /* Space out the masthead */
-//   .header {
-//     margin-bottom: 30px;
-//   }
-//   /* Remove the bottom border on the jumbotron for visual effect */
-//   .jumbotron {
-//     border-bottom: 0;
-//   }
-// }
-
-
 // d3 dendogram
 
 .node circle {
-  fill: #eee;
-  fill-opacity: 0.6;
-  stroke: #999;
-  stroke-width: 1px;
+  fill: $darkBlue;
+  fill-opacity: 1;
+  // stroke: $darkBlue;
+  // stroke-width: 0px;
 }
 
 .node {
   font: 8px $sans;
-  fill: #999;
+  fill: $veryDarkBlue;
+  cursor: pointer;
 }
 
-.node:hover {
-  font-size: 12px;
-  fill: $veryDarkBlue;
+.node text {
+  text-transform: uppercase;
 }
 
 .node.it-developer circle {
@@ -517,7 +462,7 @@ margin-bottom: 32px;
   stroke: $it-developer;
 }
 
-.node.digitalhumanist-designer circle {
+.node.digitalhumanist-designer circle, .node.dh-designer circle {
   fill: $digitalhumanist-designer;
   stroke: $digitalhumanist-designer;
 }
@@ -534,15 +479,16 @@ margin-bottom: 32px;
 
 .link {
   fill: none;
-  stroke: #ccc;
+  stroke: $grey;
   stroke-width: 1px;
 }
 
 .out {
-  opacity: 0.5;
+  opacity: 0.6;
+  cursor: inherit;
 }
 
-.wg1.focus {
+.link.out {
   opacity: 1;
 }
 
@@ -550,10 +496,81 @@ margin-bottom: 32px;
   width: 100%;
   height: 60vh;
   min-height: 300px;
-  border: 12px solid $darkBlue;
+  border: 12px solid $veryDarkBlue;
   box-sizing: border-box;
   margin:0;
   padding:0;
+}
+
+.node:hover {
+  
+  text {
+    font-size: 12px;
+    fill: $veryDarkBlue;
+  }
+
+  
+}
+.out:hover {
+  text {
+    font-size: inherit;
+    fill: inherit;
+  }
+}
+
+//legend dendogram
+
+legend-communities {
+  display: block;
+  margin: 10px 0;
+
+  p {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0;
+    font-family: $sans;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+  }
+
+  p:first-child {
+    margin-top: 24px;
+    font-size: inherit;
+    margin-bottom: 8px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+  }
+
+  .round {
+    display: block;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    border-radius: 100%;
+    margin-right: 8px;
+  }
+
+  .scholar>.round {
+    background-color: $scholar;
+  }
+
+  .archivist-librarian>.round {
+    background-color: $archivist-librarian;
+  }
+
+  .it-developer>.round {
+    background-color: $it-developer;
+  }
+
+  .dh-designer>.round {
+    background-color: $digitalhumanist-designer;
+  }
+
 }
 
 // map
@@ -561,7 +578,7 @@ map-emlo {
   border: 0px solid white;
   border-width: 12px;
   width: 100vw;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -573,35 +590,78 @@ map-emlo {
   }
   path {
     fill: none;
-    stroke-width: 1px;
-    stroke: $veryDarkBlue;
-    stroke-opacity: 0.5;
-    /*shape-rendering:crispEdges;*/
+    stroke-width: 1.5px;
+    stroke: $orange;
+    stroke-opacity: 0.8;
+    shape-rendering:auto;
   }
-
   circle {
     stroke-width: 2px;
     stroke: $yellow;
     fill-opacity: 0;
     opacity: 0.75;
   }
-
   circle.arrived {
     fill: $orange;
     fill-opacity:1;
     stroke-width: 0px;
     opacity: 0.2;
   }
-
   .date{
     position: absolute;
     z-index: 1;
     font-size: 16px;
     padding: 8px 8px;
   }
+}
+.box-map {
+  background-color: white;
+  border: 8px solid #F36949;
+  bottom: 8px;
+  color: black;
+  left: 8px;
+  margin-top: 20px;
+  padding-bottom: 8px;
+  h4{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+  .legend-descr {
+    display: flex;
+    align-items: center;
+  }
+  .legend-item {
+    border-radius:100%;
+    font-size: 16px;
+    text-align: right;
+    background-color: $darkBlue;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+  }
+  .legend-descr p {
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 11.4px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    font-family: $sans;
+    display: inline-block;
+  }
 
+  .legend-text {
+    margin-top: 2px;
+  }
 
+  .legend-text p {
+    font-family: $serif;
+    font-size: 12px;
+    line-height: normal;
+  }
 
+  p {
+    margin: 8px 0;
+  }
 }
 
 //linechart
@@ -647,4 +707,106 @@ linechart-letter-distribution {
     stroke-width: 1px;
   }
 
+}
+
+
+
+//Responsiveness
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  // .navbar-collapse {
+  //   background-color: red;
+  // }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  // .navbar-collapse {
+  //   background-color: green;
+  // }
+  .net-img-container>img {
+    border: 12px solid $darkBlue;
+    margin:auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    max-height: 70vh;
+    max-width: 70vh;
+  }
+  p {
+    margin: 24px 0;
+    line-height: 24px;
+  }
+  p.description {
+    font-family: $sans;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    margin: 0px;
+  }
+  section:nth-child(1) {
+    .level1 {
+      background-size: 740px auto;
+      background-position: center center;
+    } 
+    .level2 {
+      background-position: center 60%;
+    }
+    .level3.hand-left {
+      height: 350px;
+      width: 350px;      
+      background-size: 100% 100%;
+
+    }
+    .level3.hand-right {
+      height: 350px;
+      width: 350px;
+      background-size: 100% 100%;
+    }  
+  }
+  legend-communities {
+    p {
+      font-size: 10px;
+    }
+  }
+  map-emlo {
+    .legend-text p {
+      font-family: $serif;
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  // .navbar-collapse {
+  //   background-color: purple;
+  // }
+  section:nth-child(1) {
+    .level3.hand-left {
+      height: 450px;
+      width: 450px;      
+      background-size: 450px 450px;
+
+    }
+
+    .level3.hand-right {
+      height: 450px;
+      width: 450px;
+      background-size: 450px 450px;
+    }
+  }
+  map-emlo {
+    .box-map {
+    }
+  }
 }

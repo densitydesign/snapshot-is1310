@@ -15,9 +15,12 @@ angular.module('rolApp')
 
 			
 
-			scope.drawDendrogramWg = function(root) {
+			scope.drawDendrogramWg = function(root,opacity) {
 
 				d3.select("#dendogram2").selectAll("*").remove();
+				d3.select("#dendogram2")
+					.style("border","0px solid red")
+					.style("opacity",opacity)
 
 				var width = parseInt(d3.select('#dendogram2').style('width')),
 					height = parseInt(d3.select('#dendogram2').style('height')),
@@ -59,13 +62,34 @@ angular.module('rolApp')
 			      })
 
 			  node.append("circle")
-			      .attr("r", 4);
+			      .attr("r", function(){
+			      	if ( window.innerWidth >= 768 && window.innerWidth < 992 ) {
+			      		// console.log("2")
+			      		return 2;
+			      	} else if ( window.innerWidth >= 992 && window.innerWidth < 1200 ) {
+			      		// console.log("3")
+			      		return 3;
+			      	} else {
+			      		// console.log("4")
+			      		return 3.5;
+			      	}
+			      	
+			      });
 
 			  node.append("text")
 			      .attr("dy", ".31em")
-			      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-			      .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-			      .text(function(d) { return d.name; });
+			      // .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+			      // .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+			      .attr("text-anchor", "start" )
+			      .attr("transform", "translate(8)" )
+			      .text(function(d) { 
+			      	// if (d.name && d.name!="WG 1" && d.name!="WG 2" && d.name!="WG 3" && d.name!="WG 4" && d.name!="WG 5" && d.name!="WG 6" && d.name!="Affiliates" && d.name!="No WG") {
+			      	// 	return d.name.substring(0, d.name.indexOf(' ')+2).replace('#', ' ')+'.'
+			      	// } else {
+			      	// 	return d.name;
+			      	// }
+			      	return d.name;
+			      });
 
 
 			d3.select(self.frameElement).style("height", radius * 2 + "px");
@@ -78,7 +102,7 @@ angular.module('rolApp')
 					delete cluster.children;
 				})
 				return deep;
-			})
+			},0)
 
 			
 
