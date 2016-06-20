@@ -92,7 +92,7 @@ angular.module('rolApp')
 			      });
 
 
-			d3.select(self.frameElement).style("height", radius * 2 + "px");
+				d3.select(self.frameElement).style("height", radius * 2 + "px");
 
 			}
 
@@ -104,7 +104,7 @@ angular.module('rolApp')
 				return deep;
 			},0)
 
-			
+			scope.drawDendrogramWg(scope.dendrogramPeopleWG,1)			
 
 			
 			

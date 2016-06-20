@@ -2,27 +2,25 @@
 
 /**
  * @ngdoc directive
- * @name rolApp.directive:dendogramPeople
+ * @name rolApp.directive:dendogramPeopleExtended
  * @description
- * # dendogramPeople
+ * # dendogramPeopleExtended
  */
 angular.module('rolApp')
-  .directive('communitiesDendogram', function ($window) {
+  .directive('communitiesDendogramExtended', function () {
     return {
-		template: '<svg id="dendogram"></svg>',
-		restrict: 'AEC',
-		link: function(scope, elem, attrs){  		
+      template: '<svg id="dendogram-extended"></svg>',
+      restrict: 'AEC',
+      link: function(scope, elem, attrs){  		
 
-			scope.drawDendrogram = function(root,opacity) {
-				d3.select("#dendogram").selectAll("*").remove();
-				d3.select("#dendogram")
+			scope.drawDendrogramExtended = function(root,opacity) {
+				d3.select("#dendogram-extended").selectAll("*").remove();
+				d3.select("#dendogram-extended")
 					.style("border","0px solid red")
 					.style("opacity",opacity)
 
 
-				var width = parseInt(d3.select('#dendogram').style('width')),
-					height = parseInt(d3.select('#dendogram').style('height')),
-					width = window.innerHeight*0.9,
+				var width = window.innerHeight*0.9,
 					height = window.innerHeight*0.9,
 					radius = height / 2,
 					posX = radius
@@ -35,19 +33,11 @@ angular.module('rolApp')
 				    .size([360, radius - 120]);
 				var diagonal = d3.svg.diagonal.radial()
 				    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
-				var svg = d3.select("#dendogram")
+				var svg = d3.select("#dendogram-extended")
 				    .attr("width", radius * 2)
 				    .attr("height", radius * 2)
 				  .append("g")
 				    .attr("transform", "translate(" + posX + "," + radius + ")");
-
-			  
-
-				scope.drawDendrogram.update = function(){
-					console.log("update function")
-				}
-
-
 
 				var nodes = cluster.nodes(root);
 
@@ -91,22 +81,7 @@ angular.module('rolApp')
 
 			}
 
-			// scope.drawDendrogram(function(){
-			// 	var deep = _.cloneDeep(scope.dendrogramPeople);
-			// 	deep.children.forEach(function(cluster){
-			// 		delete cluster.children;
-			// 	})
-			// 	return deep;
-			// },0)
-
-			
-			var deep = _.cloneDeep(scope.dendrogramPeople);
-			deep.children.forEach(function(cluster){
-				delete cluster.children;
-			})
-			scope.drawDendrogram(deep,1)
-			
-
+			scope.drawDendrogramExtended(scope.dendrogramPeople,1)
 			
     	}
     };

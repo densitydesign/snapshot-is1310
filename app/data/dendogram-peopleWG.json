@@ -73,6 +73,13 @@
                     "size": 1,
                     "color": null,
                     "label": null
+                },
+                {
+                    "name": "Arno Bosse",
+                    "class": "name",
+                    "size": 1,
+                    "color": null,
+                    "label": null
                 }
             ]
         },
@@ -1140,13 +1147,6 @@
                 },
                 {
                     "name": "Tobias Winnerling",
-                    "class": "name",
-                    "size": 1,
-                    "color": null,
-                    "label": null
-                },
-                {
-                    "name": "Arno Bosse",
                     "class": "name",
                     "size": 1,
                     "color": null,

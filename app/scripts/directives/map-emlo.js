@@ -21,16 +21,16 @@ angular.module('rolApp')
 
 	    // $scope.current = start;
 
-	    // L.mapbox.accessToken = 'pk.eyJ1IjoiZmVuaWNlbnRvIiwiYSI6ImNpbmhsenNqeDAwMmd3ZGx5MXVmcjNrdTAifQ.D1nRFjJRXUR7PMk5eDJzHQ';
-	    // var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/fenicento/cinhm9jbi01jhcxnhhyxqivcl/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
-	    //   attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
-	    // });
-
-	    var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/iosonosempreio/cinqjdw3z00akd6m4w5dn38c4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW9zb25vc2VtcHJlaW8iLCJhIjoiOHpYSnpLQSJ9.2ZxP5dSbQhs-dH0PhXER9A', {
+	    L.mapbox.accessToken = 'pk.eyJ1IjoiZmVuaWNlbnRvIiwiYSI6ImNpbmhsenNqeDAwMmd3ZGx5MXVmcjNrdTAifQ.D1nRFjJRXUR7PMk5eDJzHQ';
+	    var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/fenicento/cinhm9jbi01jhcxnhhyxqivcl/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
 	      attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
 	    });
 
-	    https://api.mapbox.com/styles/v1/iosonosempreio/cinqjdw3z00akd6m4w5dn38c4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW9zb25vc2VtcHJlaW8iLCJhIjoiOHpYSnpLQSJ9.2ZxP5dSbQhs-dH0PhXER9A
+	    // var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/iosonosempreio/cinqjdw3z00akd6m4w5dn38c4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW9zb25vc2VtcHJlaW8iLCJhIjoiOHpYSnpLQSJ9.2ZxP5dSbQhs-dH0PhXER9A', {
+	    //   attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+	    // });
+
+	    // https://api.mapbox.com/styles/v1/iosonosempreio/cinqjdw3z00akd6m4w5dn38c4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW9zb25vc2VtcHJlaW8iLCJhIjoiOHpYSnpLQSJ9.2ZxP5dSbQhs-dH0PhXER9A
 
 
 
@@ -40,7 +40,7 @@ angular.module('rolApp')
 	      .setView([50.043611, 3.730556], 5);
 
 	    // Disable drag and zoom handlers.
-	    // map.dragging.disable();
+	    map.dragging.disable();
 	    map.touchZoom.disable();
 	    map.doubleClickZoom.disable();
 	    map.scrollWheelZoom.disable();
@@ -66,7 +66,22 @@ angular.module('rolApp')
 
 	    var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-	    d3.json("data/confidential/routes-selected847_flipped.json", function (collection) {
+	    d3.json("data/confidential/routes-selected-by-distance_flipped_2.json", function (collection) {
+	      
+	      var itemsToRemove = []
+	      collection.features.forEach(function(feature,i){
+	      	if (feature.geometry.coordinates.length <= 3) {
+	      		itemsToRemove.push(i)
+	      	}
+	      })
+
+
+	    for (var i = itemsToRemove.length; i>=0; i--) {
+		    collection.features.splice(i, 1);
+		}
+
+	      console.log(itemsToRemove)
+
 	      var transform = d3.geo.transform({
 	        point: projectPoint
 	      });
