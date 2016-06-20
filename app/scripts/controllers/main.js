@@ -8,7 +8,7 @@
  * Controller of the rolApp
  */
 angular.module('rolApp')
-  .value('duScrollDuration', 1500)
+  .value('duScrollDuration', 2000)
   .value('duScrollOffset', 50)
   .controller('MainCtrl', function ($scope, people, peopleWG) {
 
