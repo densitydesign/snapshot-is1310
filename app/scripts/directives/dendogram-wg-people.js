@@ -7,7 +7,7 @@
  * # dendogramWGPeople
  */
 angular.module('rolApp')
-  .directive('communitiesWgDendogram', function ($window) {
+  .directive('communitiesWgDendogramDDD', function ($window) {
     return {
 		template: '<svg id="dendogram2"></svg>',
 		restrict: 'AEC',

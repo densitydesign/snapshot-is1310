@@ -19,11 +19,8 @@ angular.module('rolApp')
 					.style("border","0px solid red")
 					.style("opacity",opacity)
 
-
-				var width = parseInt(d3.select('#dendogram').style('width')),
-					height = parseInt(d3.select('#dendogram').style('height')),
-					width = window.innerHeight*0.9,
-					height = window.innerHeight*0.9,
+				var width = scope.dendrogramAttr.side,
+					height = scope.dendrogramAttr.side,
 					radius = height / 2,
 					posX = radius
 

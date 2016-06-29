@@ -46,45 +46,42 @@
         <p><b>COST Action IS1310 Reassembling the Republic of Letters, 1500–1800</b> is therefore essentially a networking programme. It emerged in response to the expectation that that the ongoing revolution in digital communications technology can solve the scholarly problem created by the evolution of postal communication in the early modern period, thanks to the contribution of various sholars and researchers spread in different research groups.</p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <h3>Research at National Level</h3>
+      </div>
+      <div class="clearfix"></div>
+      <div class="h-row col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-5"></div>
+      <div class="clearfix"></div>
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <p>Spread all over the coutries involved in the COST Action there are a number of reaserachers dealing with the digital humanities, and especially with the study of correspondence.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12" id="map1">
+        <iframe width="100%" height="520" frameborder="0" src="https://densitydesign.cartodb.com/viz/dc41f152-3a21-11e6-80bd-0ef7f98ade21/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+      </div>
   </div>
 
   <div class="container">
-    <div class="network-stage">
-      
     <div class="row">
-      <div class="col-xs-12">
-          <iframe width="100%" height="520" frameborder="0" src="https://densitydesign.cartodb.com/viz/dc41f152-3a21-11e6-80bd-0ef7f98ade21/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-        </div>
-    </div>
-
-      <div class="row vertical-centered">   
-        <div class="net-img-container col-xs-12 col-sm-8">
-          <img src="images/geographical-extent.png" class="img-responsive">
-        </div>
-        
-        <div class="col-xs-12 col-sm-4">
-          <div class="net-stage">
-            <h4>2.1 Research at National Level</h4>
-            <h4>–</h4>
-            <p class="description">Spread all over the coutries involved in the COST Action there are a number of reaserachers dealing with the digital humanities, and especially with the study of correspondence.</p>
-          </div>     
-        </div>
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <h3>Fostering Collaboration</h3>
       </div>
+      <div class="clearfix"></div>
+      <div class="h-row col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-5"></div>
+      <div class="clearfix"></div>
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
 
-      <div class="row vertical-centered">   
-        <div class="net-img-container col-xs-12 col-sm-8">
-          <img class="img-responsive" src="images/stsm-network.png">
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="net-stage">
-            <h4>2.2 Fostering Collaboration</h4>
-            <h4>–</h4>
-            <p class="description">Thanks to a particular form of grant called STSM (Short Term Scientific Missions) people had been able of meet with the aim of lead very specific projects.<br/>In the network, nodes are representing COST-involved nations. Edges are directional, meaning one or more people travelled from a country to a hosting one, while the size is representative of the sum of in-going and out-going connection every nation assists.<br/>As it is possible to deduce from the image, not all the nations have been involved (as a hosting one or not) in an STSM.</p>
-          </div>     
-        </div>
+        <p>Thanks to a particular form of grant called STSM (Short Term Scientific Missions) people had been able of meet with the aim of lead very specific projects.<br/>In the network, nodes are representing COST-involved nations. Edges are directional, meaning one or more people travelled from a country to a hosting one, while the size is representative of the sum of in-going and out-going connection every nation assists.<br/>As it is possible to deduce from the image, not all the nations have been involved (as a hosting one or not) in an STSM.</p>
+
+        <img src="images/stsm-network.png" class="img-responsive">
       </div>
+    </div>  
       
-    </div>
   </div>
 
   <div class="container">
@@ -117,16 +114,16 @@
       </div>
     </div>
        
-    <div class="row dendogram-stage" style="border:0px solid black">
+    <div class="row dendogram-stage">
       
       <div class="chart-container col-sm-9">
-        <div class="stiky-container communities-dendogram" xxxsticky xxxoffset="{{offset}}" xxxusePlaceholder="false" xxxconfine="true">
+        <div class="stiky-container communities-dendogram">
           <!-- svg is created inside here by directive "dendogram-people" -->
         </div>
       </div> <!-- Close col-sm-8 -->
 
       <div class="col-sm-3">
-        <div xxxid="ds1" class="dend-stage" xxxscroll-trigger="animateDendogram('ds1')">
+        <div class="dend-stage">
           <h4>Four Communities</h4>
           <h4>–</h4>
           <p class="description">The interdisciplinarity breath of this organization is based on four different communities, within them is possible to recognize all fundamentals that are needed in order to comply to the aim of the Action.</p>
@@ -136,7 +133,7 @@
 
     </div> <!-- Close Row, dendogram-stage -->
 
-    <div class="row dendogram-stage" style="border:0px solid black">
+    <div class="row dendogram-stage">
       
       <div class="col-sm-9 communities-dendogram-extended"></div>
 
@@ -163,71 +160,28 @@
     </div>
 
     <div class="row dendogram-wg-stage">
-      <div class="chart-container col-sm-9">
-        <div class="stiky-container communities-wg-dendogram" sticky offset="{{offset}}" usePlaceholder="false" confine="true">
-          <!-- svg is created inside here by directive "dendogram-WG-people" -->
-        </div>
-      </div> <!-- Close col-sm-8 -->
-      
+      <div class="chart-container sticky-container col-sm-9">
+        <working-groups-dendrogram id="working-groups-dendrogram" class="focus-{{wgFocus}}"></working-groups-dendrogram>
+      </div>
       <div class="col-sm-3">
-        <div class="room h50vh"></div>
-        <div id="ds4" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds4')">
-          <h4>WG1: Space and Time</h4>
-          <h4>–</h4>
-          <p class="description">WG 1 considers how to identify, represent, analyse, and visualize the data on the spatial and chronological dimensions of correspondence networks found in catalogue records, in letter texts, and in prosopographical data on letter writers and recipients.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds5" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds5')">
-          <h4>WG2: People and Network</h4>
-          <h4>–</h4>
-          <p class="description">WG 2 studies how best to structure and assemble biographical data describing the citizens of the republic of letters, as well as how to structure, analyse, and visualize data on the networks created by epistolary and related forms of learned exchange.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds6" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds6')">
-          <h4>WG3: Text and Topics</h4>
-          <h4>–</h4>
-          <p class="description">WG 3 focuses on the presentation of letters as images and digital texts, the development of tools for transcribing, annotating, editing, text mining, and topic modelling them, the translation from print to digital form and vice versa, and the use of training schools to help specify a virtual research environment adapted for the study of this material.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds7" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds7')">
-          <h4>WG4: Documents and Collections</h4>
-          <h4>–</h4>
-          <p class="description">WG 4 will develop means of describing the physical characteristics of letters, of capturing information on their provenance history, and of assembling information on collections of learned correspondence and existing aids for finding them.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds8" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds8')">
-          <h4>WG5: Data Exchange and Strategic Planning</h4>
-          <h4>–</h4>
-          <p class="description">WG 5 deals with the means of generating standardized digital data of all these kinds in unprecedented quantities, the technical and legal arrangements necessary for exchanging them between participating individuals, projects, and institutions, and the problems of funding and long-term preservation and sustainability.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds9" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds9')">
-          <h4>WG6: Visualisation and Communication</h4>
-          <h4>–</h4>
-          <p class="description">WG 6 will conceptualize and specify a new generation of visualization tools applicable to all stages in the process of working with epistolary data, and will consider means of communicating both the scholarly and the technical interest of the Action to a variety of different audiences, within and especially beyond the academy.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div>
-        <div id="ds10" class="dend-two-stage" scroll-trigger="animateDendogramWg('ds10')">
-          <h4>Affiliates and No Working Group Membership</h4>
-          <h4>–</h4>
-          <p class="description">Beside those organised groups, there are even people interested in partaking the activities of the Action, the Affiliates, and people who pledge to make everithing work smoothly.</p>
-          <legend-communities></legend-communities>
-        </div>
-        <div class="room h50vh"></div> 
-      </div> <!-- Close col-sm-4 -->
+        <div class="dend-stage-box">
+          <div class="dend-two-stage">
+            <p class="selection-title">Select a group</p>
 
+            <div class="wgFocusButton" ng-repeat="button in wgDescriptions" ng-click="switchWg($index)"><p>{{button.button}}</p></div>
+            <h4 style="clear:both; padding-top: 20px;">{{wgDescriptions[wgFocus].title}}</h4>
+            <h4>–</h4>
+            <p class="description">{{wgDescriptions[wgFocus].description}}</p>
+            <legend-communities></legend-communities>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div> <!-- CONTAINER -->
 </section>
 
-<section class="container-fluid" id="section4">
+<!-- <section class="container-fluid" id="section4">
   <div class=container>
     <div class="row">
       <div class="big-number col-sm-4 col-sm-offset-4">
@@ -357,9 +311,9 @@
         <p>Three calendars (?). Recombine all the different date notations into one common. After that we can try to visualise.</p>
       </div>
     </div>
-  </div> <!-- close container -->
+  </div> --> <!-- close container -->
 
-  <linechart-letter-distribution  style="width: 100%;height:800px;"></linechart-letter-distribution>
+  <!-- <linechart-letter-distribution></linechart-letter-distribution>
 
   <div class="container">
     <div class="row">
@@ -389,8 +343,8 @@
         <p>Then we can show a map with 2 togglable layers (origins and destinations). Archs, routes?</p>
       </div>
     </div>
-  </div> <!-- container -->
-  <h1>BOX WITH MAPS</h1>
+  </div> --> <!-- container -->
+  <!-- <h1>BOX WITH MAPS</h1>
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
@@ -401,8 +355,8 @@
         <p>Needed suitable strategies for dealing with this geo issues. One possible is to go for a more abstract level of visualisation, such as a cartogram.</p>
       </div>
     </div>
-  </div> <!-- container -->
-  <h1>BOX WITH DORLING CARTOGRAM</h1>
+  </div> --> <!-- container -->
+  <!-- <h1>BOX WITH DORLING CARTOGRAM</h1>
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
@@ -413,9 +367,9 @@
         <p>Few examples, representative. Conclusions.</p>
       </div>
     </div>
-  </div> <!-- container -->
+  </div> --> <!-- container -->
 
-</section>
+<!-- </section> -->
 
 <section class="container-fluid" id="section5">
   <div class="container">
@@ -441,7 +395,7 @@
     </div>
   </div>
   <div class="row">
-      <iframe id="events-map" frameBorder='0' src='https://a.tiles.mapbox.com/v4/iosonosempreio.01ajg1j8/attribution,zoompan.html?access_token=pk.eyJ1IjoiaW9zb25vc2VtcHJlaW8iLCJhIjoiOHpYSnpLQSJ9.2ZxP5dSbQhs-dH0PhXER9A'></iframe>
+      <iframe id="events-map" frameborder="0" src="https://densitydesign.cartodb.com/viz/6ced7000-3d38-11e6-b4c7-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
   </div>
 </section>
 
@@ -449,7 +403,7 @@
   <div class="container">
     <div class="row">
       <div class="big-number col-sm-4 col-sm-offset-4">
-        <div class=""><span>6</span></div>
+        <div class=""><span>5</span></div>
       </div>
     </div>
     <div class="row">

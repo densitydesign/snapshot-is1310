@@ -20,8 +20,8 @@ angular.module('rolApp')
 					.style("opacity",opacity)
 
 
-				var width = window.innerHeight*0.9,
-					height = window.innerHeight*0.9,
+				var width = scope.dendrogramAttr.side,
+					height = scope.dendrogramAttr.side,
 					radius = height / 2,
 					posX = radius
 
