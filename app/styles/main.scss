@@ -108,10 +108,11 @@ section:nth-child(1) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   box-sizing: border-box;
   padding-top: $navbarHeight;
+  padding-bottom: 0px;
   background-size: 1440px auto;
     background-repeat: no-repeat;
     background-position: center center;
@@ -128,12 +129,9 @@ section:nth-child(1) {
   }
 
   .level1 {
-    height: 100vh;
+    height: 100%;
     width: 98vw;
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     background-size: 80% auto;
     background-repeat: no-repeat;
     background-position: center 18%;

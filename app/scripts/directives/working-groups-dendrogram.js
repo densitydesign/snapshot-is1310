@@ -74,6 +74,9 @@ angular.module('rolApp')
 		      .text(function(d) { return d.name })
 		    d3.select(self.frameElement).style("height", radius * 2 + "px");
 
+		    //Orient Dendrogram
+		    scope.switchWg(0);
+
 		  } //close Link
     }
   });

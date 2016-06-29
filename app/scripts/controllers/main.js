@@ -138,24 +138,18 @@ angular.module('rolApp')
       }
     ]
 
+    //The dendrogram is initialised and rotated and "focussed" in the directive working-group-dendrogram
+
     $scope.switchWg = function(index) {
       $scope.wgFocus = index;
-
-      var number = index +1;
-
       var thisClass = "."+$scope.wgDescriptions[index].class
-
       //rotate dendrogram
       $("#working-groups-dendrogram>svg>g").find("*").addClass('out')
       $("#working-groups-dendrogram>svg>g").find(thisClass).removeClass('out')
       $("#working-groups-dendrogram>svg>g").find(thisClass + " *").removeClass('out')
-      // $("#dendogram2").css("transform", "rotate(-88deg)")
       d3.select("#working-groups-dendrogram>svg").style("transform", "rotate(" + $scope.wgDescriptions[index].angle + "deg)")
-
       // $scope.$apply();
     }
-
-    $scope.switchWg(0);
 
     $scope.centerStyckyElm = function(stickyElement){
         var thisHeight = parseInt($(stickyElement).css("height"));
