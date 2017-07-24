@@ -85,56 +85,56 @@ angular.module('rolApp')
         "title":"WG1: Space and Time",
         "description": "WG 1 considers how to identify, represent, analyse, and visualize the data on the spatial and chronological dimensions of correspondence networks found in catalogue records, in letter texts, and in prosopographical data on letter writers and recipients.",
         "button": "WG 1",
-        "angle": -88,
+        "angle": -90,
         "class": "wg1"
       },
       {
         "title":"WG2: People and Network",
         "description": "WG 2 studies how best to structure and assemble biographical data describing the citizens of the republic of letters, as well as how to structure, analyse, and visualize data on the networks created by epistolary and related forms of learned exchange.",
         "button": "WG 2",
-        "angle": -62,
+        "angle": -227,
         "class": "wg2"
       },
       {
         "title":"WG3: Text and Topics",
         "description": "WG 3 focuses on the presentation of letters as images and digital texts, the development of tools for transcribing, annotating, editing, text mining, and topic modelling them, the translation from print to digital form and vice versa, and the use of training schools to help specify a virtual research environment adapted for the study of this material.",
         "button": "WG 3",
-        "angle": -25,
+        "angle": 169,
         "class": "wg3"
       },
       {
         "title":"WG4: Documents and Collections",
         "description": "WG 4 will develop means of describing the physical characteristics of letters, of capturing information on their provenance history, and of assembling information on collections of learned correspondence and existing aids for finding them.",
         "button": "WG 4",
-        "angle": 15,
+        "angle": 68,
         "class": "wg4"
       },
       {
         "title":"WG5: Data Exchange and Strategic Planning",
         "description": "WG 5 deals with the means of generating standardized digital data of all these kinds in unprecedented quantities, the technical and legal arrangements necessary for exchanging them between participating individuals, projects, and institutions, and the problems of funding and long-term preservation and sustainability.",
         "button": "WG 5",
-        "angle": 51,
+        "angle": 200,
         "class": "wg5"
       },
       {
         "title":"WG6: Visualisation and Communication",
         "description": "WG 6 will conceptualize and specify a new generation of visualization tools applicable to all stages in the process of working with epistolary data, and will consider means of communicating both the scholarly and the technical interest of the Action to a variety of different audiences, within and especially beyond the academy.",
         "button": "WG 6",
-        "angle": 77,
+        "angle": 102,
         "class": "wg6"
       },
       {
         "title":"Affiliates",
         "description": "Beside those organised groups, there are even people interested in partaking the activities of the Action, the Affiliates, and people who pledge to make everithing work smoothly.",
         "button": "Affiliates",
-        "angle": -207,
+        "angle": -18,
         "class": "affiliates"
       },
       {
         "title":"No Working Group Membership",
         "description": "Beside those organised groups, there are even people interested in partaking the activities of the Action, the Affiliates, and people who pledge to make everithing work smoothly.",
         "button": "No WG Membership",
-        "angle": -121,
+        "angle": -123,
         "class": "nowg"
       }
     ]

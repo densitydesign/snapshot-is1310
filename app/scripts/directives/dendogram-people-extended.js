@@ -9,7 +9,7 @@
 angular.module('rolApp')
   .directive('communitiesDendogramExtended', function () {
     return {
-      template: '<svg id="dendogram-extended"></svg>',
+      template: '<svg id="dendogram-extended" style="transform: rotate(-83deg);"></svg>',
       restrict: 'AEC',
       link: function(scope, elem, attrs){  		
 
