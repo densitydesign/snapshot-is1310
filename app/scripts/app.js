@@ -29,9 +29,11 @@ angular
         controllerAs: 'main',
         resolve: {
           people : function (fileservice) {
+            console.log('people');
             return fileservice.getFile('data/dendogram-people.json')
           },
           peopleWG : function (fileservice) {
+            console.log('peopleWG');
             return fileservice.getFile('data/dendogram-peopleWG.json')
           },
         }
