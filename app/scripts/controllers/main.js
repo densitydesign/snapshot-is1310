@@ -67,8 +67,13 @@ angular.module('rolApp')
     $scope.namesShortner($scope.dendrogramPeopleWG);
     $scope.namesShortner($scope.dendrogramPeople);
 
+    var theSide;
+
+    
+
     $scope.dendrogramAttr = {
-      side: parseInt($(".dendogram-wg-stage > .chart-container").css("width")) - parseInt($(".dendogram-wg-stage > .chart-container").css("padding-left")) - parseInt($(".dendogram-wg-stage > .chart-container").css("padding-right"))
+      //side: parseInt($(".dendogram-wg-stage > .chart-container").css("width")) - parseInt($(".dendogram-wg-stage > .chart-container").css("padding-left")) - parseInt($(".dendogram-wg-stage > .chart-container").css("padding-right"))
+      // side: parseInt( $(".communities-dendogram-extended").css("width") )
     }
 
     $("#working-groups-dendrogram").css({

@@ -13,8 +13,17 @@ angular.module('rolApp')
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         
-        var width = scope.dendrogramAttr.side,
-						height = scope.dendrogramAttr.side,
+      	var width;
+          if (window.innerWidth * 0.75 >= window.innerHeight) {
+            console.log(window.innerHeight - 100)
+            width = window.innerHeight - 100
+          } else {
+            console.log(window.innerWidth * 0.75)
+            width = window.innerWidth * 0.75
+          }
+
+        // var width = scope.dendrogramAttr.side;
+				var height = width,
 						radius = height / 2,
 						posX = radius
 				if (width > height) {

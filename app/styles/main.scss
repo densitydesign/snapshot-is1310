@@ -194,7 +194,7 @@ section:nth-child(1) {
 section:last-of-type {
   background-color: $orange;
   color: white;
-  text-align: center;
+  // text-align: center;
 
   .h-row {
     border-color: $lightGrey;
@@ -402,6 +402,10 @@ margin-bottom: 32px;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
   -o-transition: transform 0.5s;
+}
+
+#dendogram-extende > g {
+  transform: rotate(-83deg);
 }
 
 working-groups-dendrogram#working-groups-dendrogram {
